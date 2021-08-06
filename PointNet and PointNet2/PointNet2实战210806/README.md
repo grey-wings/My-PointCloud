@@ -27,4 +27,7 @@
 ```process_data:False(默认)```保存用python处理过的数据集  
 ```use_uniform_sample:False(默认)``` 是否在采num_point个点时使用fps采样  
 
-最终采用的命令：```python train_classification.py --model PointNet2.pointnet2_cls_msg --num_category 10 --use_normals```
+最终采用的命令：
+```shell
+python train_classification.py --model PointNet2.pointnet2_cls_msg --num_category 10 --use_normals
+```
