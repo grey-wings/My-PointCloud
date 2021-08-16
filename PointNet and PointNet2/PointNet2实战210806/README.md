@@ -29,5 +29,5 @@
 
 最终采用的命令：
 ```shell
-python train_classification.py --model PointNet2.pointnet2_cls_msg --num_category 10 --use_normals
+
 ```
