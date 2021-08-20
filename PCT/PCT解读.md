@@ -29,5 +29,9 @@ Query, Key和Value
 ![image](https://n.sinaimg.cn/sinacn20116/96/w1080h616/20190108/5bcc-hrkkwef7014930.jpg)  
 词向量X1和权重矩阵WQ相乘得到q1，key和value的生成同理。  
 self-attention的计算步骤如下：  
-1.计算相关度：query向量和key向量点乘
-![image](https://n.sinaimg.cn/sinacn20116/669/w746h723/20190108/ad95-hrkkwef7015564.jpg)  
+1.计算相关度：query向量和key向量点乘，得到一个打分，这个打分说明了这个单词对某个特定的位置有多重要（在这里是说明每个单词对第一个位置的重要性）  
+![image](https://n.sinaimg.cn/sinacn20116/669/w746h723/20190108/ad95-hrkkwef7015564.jpg)。  
+2.打分除以8（维度dk的平方根，这里dk是64.这是一个默认值，可以修改）。这里除以√dk是因为长向量点积会很大，这样softmax的梯度不明显。这里可以参考[](https://blog.csdn.net/qq_37430422/article/details/105042303)。  
+3.对处理过的打分做softmax，得到的值表示该单词对当下位置（Thinking）的贡献，第一个词（thinking本身）的贡献为0.88，第二个词的贡献为0.12。  
+4.每个词的value向量乘以softmax后的权重。这样可以强化和特定位置相关性大的词造成的影响，弱化和这个位置相关性小的词造成的影响。  
+5.每个词处理过的value向量加权求和。
