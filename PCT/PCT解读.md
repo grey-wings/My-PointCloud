@@ -23,10 +23,11 @@ Transformer由一组encoder和一组decoder组成，在原文中，encoder和dec
 Query, Key和Value  
 这是self-attention机制的数学化表达中用到的几个概念。  
 可以把attention机制看成用一个query来检索一个memory，这个memory是一个字典，有key-value对。计算query和某个特定的key的相关度，用来确定这个key所对应的value的权重。这里的query、key和value都是向量。  
+简化的attention计算分为3步：（1）计算query和key的相关度。（2）根据相关度做softmax处理，生成权重。（3）对value根据权重进行加权平均。
 下面的图和部分内容引自上面的[图解Transformer](https://blog.csdn.net/longxinchen_ml/article/details/86533005):  
 每个词所对应的这三个向量是由词嵌入向量和三个权重矩阵WQ、WK、WV相乘来确定的。  
 ![image](https://n.sinaimg.cn/sinacn20116/96/w1080h616/20190108/5bcc-hrkkwef7014930.jpg)  
 词向量X1和权重矩阵WQ相乘得到q1，key和value的生成同理。  
 self-attention的计算步骤如下：  
-
+1. 计算相关度：query向量和key向量点乘
 ![image](https://n.sinaimg.cn/sinacn20116/669/w746h723/20190108/ad95-hrkkwef7015564.jpg)  
