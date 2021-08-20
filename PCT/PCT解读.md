@@ -27,3 +27,6 @@ Query, Key和Value
 每个词所对应的这三个向量是由词嵌入向量和三个权重矩阵WQ、WK、WV相乘来确定的。  
 ![image](https://n.sinaimg.cn/sinacn20116/96/w1080h616/20190108/5bcc-hrkkwef7014930.jpg)  
 词向量X1和权重矩阵WQ相乘得到q1，key和value的生成同理。  
+self-attention的计算步骤如下：  
+
+![image](https://n.sinaimg.cn/sinacn20116/669/w746h723/20190108/ad95-hrkkwef7015564.jpg)  
