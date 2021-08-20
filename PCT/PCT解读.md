@@ -36,3 +36,4 @@ self-attention的计算步骤如下：
 4.每个词的value向量乘以softmax后的权重。这样可以强化和特定位置相关性大的词造成的影响，弱化和这个位置相关性小的词造成的影响。  
 5.每个词处理过的value向量加权求和。
 实际上，为了加快速度，用矩阵来处理这些运算。上面几步都可以用一个公式来处理。
+![B9E74FB18EFE4D042F6C4B4DB9AA4D07](https://user-images.githubusercontent.com/74122331/130198831-e75da75c-87cb-4f56-b963-c1c2d428257d.jpg)  
