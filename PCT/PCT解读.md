@@ -44,3 +44,4 @@ self-attention的计算步骤如下：
 ## 3.multi-head attention机制  
 ![image](https://user-images.githubusercontent.com/74122331/130307249-28fb31f4-4338-4f84-b70e-5c08838c2b70.png)  
 
+# 二、PCT解读  
