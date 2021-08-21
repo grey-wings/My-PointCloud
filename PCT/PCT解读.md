@@ -16,6 +16,7 @@ Transformer由一组encoder和一组decoder组成，在原文中，encoder和dec
 [Attention机制简单总结 - 知乎](https://zhuanlan.zhihu.com/p/46313756)  
 [nlp中的Attention注意力机制+Transformer详解 - 知乎](https://zhuanlan.zhihu.com/p/53682800)  
 [“变形金刚”为何强大：从模型到代码全面解析Google Tensor2Tensor系统](https://cloud.tencent.com/developer/article/1153079)  
+[【经典精读】Transformer模型深度解读](https://zhuanlan.zhihu.com/p/104393915)  
 
 一些名词解释：
 标记嵌入 (token embedding)：也称词嵌入（word embedding），作用应该是将人类的语言映射到几何空间中。one-hot 编码得到的向量是二进制的、稀疏的（绝大部分元素都是 0）、维度很高的（维度大小等于词表中的单词个数）;词嵌入是低维的浮点数向量（即密集向量，与稀疏向量相对）。  
@@ -41,4 +42,5 @@ self-attention的计算步骤如下：
 ![image](https://www.zhihu.com/equation?tex=Attention%28Q%2C+K%2C+V%29+%3D+softmax%28%5Cfrac%7BQK%5ET%7D%7B%5Csqrt%7Bd_k%7D%7D%29V+%5C%5C)
 
 ## 3.multi-head attention机制  
-![image](https://user-images.githubusercontent.com/74122331/130307249-28fb31f4-4338-4f84-b70e-5c08838c2b70.png)
+![image](https://user-images.githubusercontent.com/74122331/130307249-28fb31f4-4338-4f84-b70e-5c08838c2b70.png)  
+
