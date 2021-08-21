@@ -39,3 +39,6 @@ self-attention的计算步骤如下：
 ![B9E74FB18EFE4D042F6C4B4DB9AA4D07](https://user-images.githubusercontent.com/74122331/130198831-e75da75c-87cb-4f56-b963-c1c2d428257d.jpg)  
 即  
 ![image](https://www.zhihu.com/equation?tex=Attention%28Q%2C+K%2C+V%29+%3D+softmax%28%5Cfrac%7BQK%5ET%7D%7B%5Csqrt%7Bd_k%7D%7D%29V+%5C%5C)
+
+## 3.multi-head attention机制  
+![image](https://user-images.githubusercontent.com/74122331/130307249-28fb31f4-4338-4f84-b70e-5c08838c2b70.png)
