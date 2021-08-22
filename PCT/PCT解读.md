@@ -66,3 +66,6 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 ## 2.网络架构  
 ![image](https://user-images.githubusercontent.com/74122331/130339677-e2b8f194-a562-499b-b4b9-1ac50ad91f08.png)
 编码器主要包括一个输入嵌入模块和四个堆叠的注意模块。解码器主要包括多个线性层（全连接层）。每个模块上方的数字表示其输出通道数。MA-Pool是Max-Pool和Average-Pool的结合，LBR是Linear, BatchNorm和ReLU层的结合。LBRD是LBR加上一个Dropout层。  
+（1）编码器  
+编码器与Transformer的编码器具有几乎相同的设计理念，只是不包括位置嵌入。
+输入点云维度是N×d，表示N个d维的点；通过输入嵌入模块(input embedding)学习嵌入后的特征表Fe，维度为N×de
