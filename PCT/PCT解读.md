@@ -69,3 +69,5 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 （1）编码器  
 编码器与Transformer的编码器具有几乎相同的设计理念，只是不包括位置嵌入。
 输入点云维度是N×d，表示N个d维的点；通过输入嵌入模块(input embedding)学习嵌入后的特征表Fe，维度为N×de
+输出Fo则由如下公式生成：  
+![image](https://user-images.githubusercontent.com/74122331/130343100-a950a492-bedd-47ed-bb7a-8346739145e9.png)
