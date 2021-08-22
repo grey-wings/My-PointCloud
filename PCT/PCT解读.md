@@ -87,5 +87,5 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 偏移注意层通过元素减法计算自注意特征和输入特征之间的偏移(差异)。  
 
 ## 4.  
-![image](https://user-images.githubusercontent.com/74122331/130345625-da6bfe04-ed38-490d-be7a-ba004a216f74.png)
-左边:邻居嵌入架构；中间:SG模块
+![image](https://user-images.githubusercontent.com/74122331/130345625-da6bfe04-ed38-490d-be7a-ba004a216f74.png)  
+左边:邻居嵌入架构；中间:SG模块，有Nin个输入点、Din个输入通道、k个邻居、Nout个输出采样点和Dout个输出通道；右上角:采样示例(彩球代表采样点)；右下角:用k-NN邻居分组的例子；LBR上面的数字:输出通道数。SG上面的数字:采样点数及其输出通道数。
