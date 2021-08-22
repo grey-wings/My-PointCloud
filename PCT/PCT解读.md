@@ -84,3 +84,4 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 （2）offset-attention  
 ![image](https://user-images.githubusercontent.com/74122331/130344281-741021ac-a274-495e-a447-79750a712984.png)
 开关显示了自我注意或偏移注意的替代方案:虚线表示自我注意分支。  
+偏移注意层通过元素减法计算自注意特征和输入特征之间的偏移(差异)。  
