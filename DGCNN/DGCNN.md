@@ -17,4 +17,5 @@ EdgeConv易于实现并集成到现有的深度学习模型中，以提高其性
 ![image](https://user-images.githubusercontent.com/74122331/131852732-57003cfe-4c0f-447c-bab6-3f070aba9fd8.png)
 左边：从点对xi，xj计算边缘特征eij；右边：EdgeConv操作。EdgeConv的输出是通过聚合与每个连接顶点发出的所有边相关联的边特征来计算的。  
 
-边函数h和聚合操作囗的选择对EdgeConv的影响很大。
+边函数h和聚合操作囗的选择对EdgeConv的影响很大。在这篇文章中，采用了一种不对称边函数
+
