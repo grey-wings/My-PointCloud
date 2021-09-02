@@ -20,3 +20,4 @@ EdgeConv易于实现并集成到现有的深度学习模型中，以提高其性
 边函数h和聚合操作囗的选择对EdgeConv的影响很大。在这篇文章中，采用了一种不对称边函数![image](https://user-images.githubusercontent.com/74122331/131854020-03ad32a9-cc07-4bc8-bca4-6bf3d426e233.png)。这结合了由补丁（patch）中心xi捕获的全局形状结构和xj - xi捕获的局部邻近信息。在这里定义![image](https://user-images.githubusercontent.com/74122331/131854275-70139e16-a95e-4c29-bd3f-2eb75d4fb2c5.png)和![image](https://user-images.githubusercontent.com/74122331/131854338-c13fe8f9-9a08-4641-bbde-45fe187acb8c.png)
 
 ## 2.动态图像更新  
+在每一层，有一个动态的图![image](https://user-images.githubusercontent.com/74122331/131854828-7219b54e-b1ef-4798-ae22-b8850f04ac1a.png)，其中第l层边的形式为![image](https://user-images.githubusercontent.com/74122331/131854894-00af455a-e5c3-4edf-b800-946113eb15f6.png)。![image](https://user-images.githubusercontent.com/74122331/131855026-69482e4b-2a42-4f9f-a31c-dd5c425ce3d7.png)是离![image](https://user-images.githubusercontent.com/74122331/131855108-34fdcfb4-df39-4208-b98b-73982645d365.png)最近的kl个点
