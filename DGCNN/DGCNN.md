@@ -26,4 +26,5 @@ EdgeConv易于实现并集成到现有的深度学习模型中，以提高其性
 如果令![image](https://user-images.githubusercontent.com/74122331/131860714-33c388a5-9a04-48fc-a98b-9ebf389eee32.png)，则这个算子具有完全的平移不变性。然而如果这么做，模型将被简化为基于无序的面片（patch）集识别对象，忽略面片的位置和方向。
 
 ### 3.模型架构  
-![image](https://user-images.githubusercontent.com/74122331/131861342-3e3d9e8a-4676-4f8b-8959-837705baf78a.png)
+![image](https://user-images.githubusercontent.com/74122331/131861342-3e3d9e8a-4676-4f8b-8959-837705baf78a.png)  
+上面的分支用于分类，下面的分支用于分割。
