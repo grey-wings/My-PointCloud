@@ -73,7 +73,7 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 编码器主要包括一个输入嵌入模块和四个堆叠的注意模块。解码器主要包括多个线性层（全连接层）。每个模块上方的数字表示其输出通道数。MA-Pool是Max-Pool和Average-Pool的结合，LBR是Linear, BatchNorm和ReLU层的结合。LBRD是LBR加上一个Dropout层。  
 （1）编码器  
 编码器与Transformer的编码器具有几乎相同的设计理念，只是不包括位置嵌入。
-输入点云维度是N×d，表示N个d维的点；通过输入嵌入模块(input embedding)学习嵌入后的特征表Fe，维度为N×de
+输入点云维度是N×d，表示N个d维的点；通过输入嵌入模块(input embedding)学习嵌入后的特征表Fe，维度为N×de  
 得到的逐点(point-wise)特征Fo则由如下公式生成：  
 ![image](https://user-images.githubusercontent.com/74122331/130343100-a950a492-bedd-47ed-bb7a-8346739145e9.png)
 其中，ATi代表第i个关注层，每个关注层具有与其输入相同的输出维度，Wo是线性层的权重矩阵。Fo维度为N×do  
