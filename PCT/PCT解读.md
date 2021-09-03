@@ -75,7 +75,7 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 编码器与Transformer的编码器具有几乎相同的设计理念，只是不包括位置嵌入。
 输入点云维度是N×d，表示N个d维的点；通过输入嵌入模块(input embedding)学习嵌入后的特征表Fe，维度为N×de  
 得到的逐点(point-wise)特征Fo则由如下公式生成：  
-![image](https://user-images.githubusercontent.com/74122331/130343100-a950a492-bedd-47ed-bb7a-8346739145e9.png)
+![image](https://user-images.githubusercontent.com/74122331/130343100-a950a492-bedd-47ed-bb7a-8346739145e9.png)  
 其中，ATi代表第i个关注层，每个关注层具有与其输入相同的输出维度，Wo是线性层的权重矩阵。Fo维度为N×do  
 为了提取一个有效的表示点云的全局特征向量，在Fo后面接MA-Pool.  
 （2）分类问题  
