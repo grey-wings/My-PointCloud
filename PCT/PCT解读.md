@@ -69,7 +69,7 @@ Transformer使用位置编码来表示单词的顺序。点云具有无序性，
 单词本身具有语义特性，但是一个特定坐标和语义内容的关系是很弱的。attention机制注重全局特征，但可能会忽略局部特征。而局部特征对点云学习是必不可少的。作者使用了邻居嵌入模块来解决这个问题。  
 
 ## 2.网络架构  
-![image](https://user-images.githubusercontent.com/74122331/130339677-e2b8f194-a562-499b-b4b9-1ac50ad91f08.png)
+![image](https://user-images.githubusercontent.com/74122331/130339677-e2b8f194-a562-499b-b4b9-1ac50ad91f08.png)  
 编码器主要包括一个输入嵌入模块和四个堆叠的注意模块。解码器主要包括多个线性层（全连接层）。每个模块上方的数字表示其输出通道数。MA-Pool是Max-Pool和Average-Pool的结合，LBR是Linear, BatchNorm和ReLU层的结合。LBRD是LBR加上一个Dropout层。  
 （1）编码器  
 编码器与Transformer的编码器具有几乎相同的设计理念，只是不包括位置嵌入。
