@@ -9,3 +9,5 @@
 并重写CE的表达式为：![image](https://user-images.githubusercontent.com/74122331/132095770-342c0ebb-9576-4491-a6f8-c0ae582f86eb.png)  
 在下图中，CE是最顶端的蓝色曲线。即使是容易分类的示例（pt >> 5），损失值也不小。  
 ![image](https://user-images.githubusercontent.com/74122331/132095808-860f975d-5563-4a6f-9693-76df1c6889cf.png)  
+
+为了解决类不平衡(class imbalance)问题，定义Balanced Cross Entropy，引入一个在0~1之间的权重因子α，与y=1的损失项相乘；1-α与y=0的损失项相乘。那么可以用和上面定义pt的方式来定义αt，这是CE损失的表达式为：![image](https://user-images.githubusercontent.com/74122331/132096131-f4f51952-a1e1-4cfa-9264-f0bb696390bc.png)  
