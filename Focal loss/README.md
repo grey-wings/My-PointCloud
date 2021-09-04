@@ -7,3 +7,5 @@
 为了简化表示，我们作如下约定：  
 ![image](https://user-images.githubusercontent.com/74122331/132095745-f1f49ce1-895e-48d4-b5cc-b08b56c56d3f.png)  
 并重写CE的表达式为：![image](https://user-images.githubusercontent.com/74122331/132095770-342c0ebb-9576-4491-a6f8-c0ae582f86eb.png)  
+在下图中，CE是最顶端的蓝色曲线。即使是容易分类的示例（pt >> 5），损失值也不小。  
+![image](https://user-images.githubusercontent.com/74122331/132095808-860f975d-5563-4a6f-9693-76df1c6889cf.png)  
