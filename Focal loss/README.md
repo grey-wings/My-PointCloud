@@ -11,3 +11,7 @@
 ![image](https://user-images.githubusercontent.com/74122331/132095808-860f975d-5563-4a6f-9693-76df1c6889cf.png)  
 
 为了解决类不平衡(class imbalance)问题，定义Balanced Cross Entropy，引入一个在0~1之间的权重因子α，与y=1的损失项相乘；1-α与y=0的损失项相乘。那么可以用和上面定义pt的方式来定义αt，这是CE损失的表达式为：![image](https://user-images.githubusercontent.com/74122331/132096131-f4f51952-a1e1-4cfa-9264-f0bb696390bc.png)  
+
+## 2.Focal loss  
+向CE中加入调节因子![image](https://user-images.githubusercontent.com/74122331/132115362-c48b1c6d-c90f-4e5d-8beb-c0332ebe71c3.png)，其中可调节的聚焦参数(focusing parameter)γ >= 0.  
+定义Focal Loss为：![image](https://user-images.githubusercontent.com/74122331/132115415-69795374-621e-4487-9083-fad736b02696.png)  
