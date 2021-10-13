@@ -5,5 +5,5 @@
 但对于可变形点云模型，全局变换函数不能正确恢复点对应关系，需要对每个点的变换函数进行逼近。将每个点的变换函数记为![image](https://user-images.githubusercontent.com/74122331/137156983-2accd77a-f040-476d-a415-60bc28878288.png)，那么变换形式就是![image](https://user-images.githubusercontent.com/74122331/137157065-2817ca49-769b-4e55-ac08-c25062f03085.png)
 。然而，估计云中的每个点的![image](https://user-images.githubusercontent.com/74122331/137156983-2accd77a-f040-476d-a415-60bc28878288.png)是一项极其困难的任务，通常使用简化变形模型的概念以一种易于处理的方式来解决这个问题。该模型的思想是将点聚集成少量的组，其中邻近的点可能经历类似类型的转换。那么变形公式可以写为：  
 ![image](https://user-images.githubusercontent.com/74122331/137157370-b7203a41-54e9-4f02-9407-d10038dfc27c.png)  
-
+因子1用于齐次坐标。下面是对齐次坐标的解释（[参考链接](https://www.cnblogs.com/zhizhan/p/3999885.html)）：  
 
