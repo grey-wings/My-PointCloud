@@ -7,10 +7,10 @@
 ![image](https://user-images.githubusercontent.com/74122331/137157370-b7203a41-54e9-4f02-9407-d10038dfc27c.png)  
 因子1用于齐次坐标。下面是对齐次坐标的解释（[参考链接](https://www.cnblogs.com/zhizhan/p/3999885.html)）：  
 在投影空间中，两条平行线会相交于一点，就像下面的铁路：  
-![](https://images.cnblogs.com/cnblogs_com/kesalin/209114/r_railroad.jpg)  
+![image](https://images.cnblogs.com/cnblogs_com/kesalin/209114/r_railroad.jpg)  
 在笛卡尔空间里面这个问题是无法解决的，因此引入齐次坐标的概念。齐次坐标用 N + 1个分量来描述 N 维坐标。比如，2D 齐次坐标是在笛卡尔坐标(X, Y)的基础上增加一个新分量 w，变成(x, y, w)，其中笛卡尔坐标系中的大X，Y 与齐次坐标中的小x，y有如下对应关系：  
 X = x/w  
 Y = y/w   
 因此，齐次坐标中的点(1, 2, 1)在笛卡尔坐标中就代表(1, 2)；齐次坐标中的点(1, 2, 0)就代表无穷远处的点。  
 齐次坐标具有缩放不变性，如下例：  
-![](https://images.cnblogs.com/cnblogs_com/kesalin/209114/r_homogeneous02.png)  
+![image](https://images.cnblogs.com/cnblogs_com/kesalin/209114/r_homogeneous02.png)  
