@@ -16,3 +16,4 @@ Y = y/w
 ![r_homogeneous02](https://user-images.githubusercontent.com/74122331/137577874-a30b5a00-3e86-47b1-802e-c156e0aea771.png)  
 c是前面将点聚集成的组的数量。基本上模型中的每个点![image](https://user-images.githubusercontent.com/74122331/137577788-41087c3d-a5e3-4feb-996a-3792b834526e.png)
 都受到变换![image](https://user-images.githubusercontent.com/74122331/137577857-34081d2a-1272-482a-ac37-193c47bb2466.png)的影响。通常在可变形模型的假设中，c < m的准则为真，c的选择取决于模型的复杂性。当c=m时，问题变得非常棘手，而非常低的c值对于变换估计可能是无效的。在这项工作中，我们提出了一种分层的方法来找到不同层次上的转换参数![image](https://user-images.githubusercontent.com/74122331/137577857-34081d2a-1272-482a-ac37-193c47bb2466.png)，我们通过假设上述的简化变形模型来估计转换。然后这些变形的点被“缝合”在一个更高的层次上，这个过程不断重复，直到没有足够的点更新。该方法通过将问题简化为不同的层次来逼近变形。我们在实验结果部分证明，方法只考虑一个单一的几何水平，不能以稳健的方式近似大量的变形。  
+我们假设在模型和数据(可以通过特征匹配算法得到)之间的关键点(η1，···，ηk)之间有k个初始对应数(initial correspondence)。我们把点集P的表面表征(surface representation)或三角测量(triangulation)定义为D，点集Q的表面表征定义为S。然后，根据每个顶点到相应关键点的测地线距离，从顶点的接近度开始计算,我们得到一组表面补丁(surface patches)
