@@ -14,3 +14,5 @@ Y = y/w
 因此，齐次坐标中的点(1, 2, 1)在笛卡尔坐标中就代表(1, 2)；齐次坐标中的点(1, 2, 0)就代表无穷远处的点。  
 齐次坐标具有缩放不变性，如下例：  
 ![image](https://images.cnblogs.com/cnblogs_com/kesalin/209114/r_homogeneous02.png)  
+c是前面将点聚集成的组的数量。基本上模型中的每个点![image](https://user-images.githubusercontent.com/74122331/137577788-41087c3d-a5e3-4feb-996a-3792b834526e.png)
+是
