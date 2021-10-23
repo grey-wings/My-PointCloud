@@ -24,7 +24,8 @@
 ![image](https://user-images.githubusercontent.com/74122331/138547726-1df555e0-505c-43e2-92a0-c07e761ad008.png)  
 其中，![image](https://user-images.githubusercontent.com/74122331/138547730-dd7b8cfb-1063-45a3-b169-da32244c8c02.png)是点云P或g·Q的全局特征。g是变换矩阵（R和t）。  
 为了更好地了解特征网络在非线性优化过程中提取了什么，我们将特征地图和迭代过程可视化，如图3所示。我们将全局特征映射重构为方阵，并将其显示为图像。图3为点云P和变换后的点云Q的特征图，以及第一次迭代、第5次迭代和最后10次迭代的特征图差异。查看图3的最后三列，当对齐变得更准确时(底部行)，特征图的差异(顶部行)变得更小。  
- 
+ ![image](https://user-images.githubusercontent.com/74122331/138547922-dcafba19-b744-4aed-b2ce-2c63eb850806.png)
+
 图注：特征提取网络生成的特征图以及迭代过程中的特征差异。第一次迭代时，P与变换后的Q之间的feature map差值(上)较大，对齐(下)不好。在第十次迭代时，点cloudPand变换后的q的特征图差异极小，对齐近乎完美。  
 
 
