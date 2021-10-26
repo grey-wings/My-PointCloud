@@ -36,6 +36,7 @@
 
 
 ## 二、李群和李代数简介  
+### 1.旋转矩阵和变换矩阵  
 在原作者提供的代码中，用到了李群和李代数的相关知识。下面进行简要介绍。  
 [参考链接](https://zhuanlan.zhihu.com/p/358455662)将点云Q与P最佳对齐如下图所示:![image](https://user-images.githubusercontent.com/74122331/138546569-89b72dfd-57b8-4bff-82d8-cd353db6a425.png)  
 设有两个坐标系，一个的正交基底是[e1, e2, e3],，还有一个的正交基底是[e1', e2', e3']。他们的原点是相同的，也就是只有旋转关系。同一个点在这两个坐标系中的坐标分别为[a1, a2, a3]和[a1', a2', a3']。则他们的关系如下：  
@@ -47,4 +48,15 @@
 这类矩阵称为特殊正交群(Special Orthogonal Group)，在三维空间中，n = 3，就称为SO(3):![](https://www.zhihu.com/equation?tex=+SO%283%29+%3D+%5Cbegin%7BBmatrix%7D+R+%5Cin+%5Cmathbb%7BR%7D%5E%7B3%5Ctimes+3%7D+%7C+R+%5Ctimes+R%5ET+%3D+I+%7C+det%28R%29+%3D+1+%5Cend%7BBmatrix%7D+)  
 在齐次坐标系中，有这样一类集合：  
 ![](https://www.zhihu.com/equation?tex=+SE%283%29+%3D+%5Cleft+%5C%7B+T+%3D+%5Cbegin%7Bbmatrix%7D+R+%26+t%5C%5C++0%5ET+%26+1++%5Cend%7Bbmatrix%7D+%5Cin+%5Cmathbb%7BR%7D%5E%7B4%5Ctimes+4%7D+%7C+R+%5Cin+SO%283%29%2C+t+%5Cin+%5Cmathbb%7BR%7D%5E%7B3%7D%5Cright+%5C%7D+)  
-它的左上角是一个旋转矩阵R，右侧是平移向量t，左下角为0块，右下角为1.
+它的左上角是一个旋转矩阵R，右侧是平移向量t，左下角为0块，右下角为1.  
+这些变换都是欧式变换，我们给这类矩阵也取一个名字，叫特殊欧式群（Special Euclidean Group），简称SE(3)：  
+![](https://www.zhihu.com/equation?tex=+SE%283%29+%3D+%5Cleft+%5C%7B+T+%3D+%5Cbegin%7Bbmatrix%7D+R+%26+t%5C%5C++0%5ET+%26+1++%5Cend%7Bbmatrix%7D+%5Cin+%5Cmathbb%7BR%7D%5E%7B4%5Ctimes+4%7D+%7C+R+%5Cin+SO%283%29%2C+t+%5Cin+%5Cmathbb%7BR%7D%5E%7B3%7D%5Cright+%5C%7D+)  
+它的逆，与表示旋转的SO(3)一样，表示与它相反的变换（变过去，和变回来）：  
+![](https://www.zhihu.com/equation?tex=+T%5E%7B-1%7D+%3D+%5Cbegin%7Bbmatrix%7D+R%5ET+%26+-R%5ETt%5C%5C++0%5ET+%26+1++%5Cend%7Bbmatrix%7D+)  
+
+### 2.旋转矩阵和变换矩阵存在的问题  
+#### （1）旋转矩阵冗余
+对于旋转操作，它只有三个自由度。而旋转矩阵用了9个量，这是多余的。理论上我们可以用三个量来表示一次旋转。比如我们可以用一个向量来表示旋转，它的方向是旋转的轴心，而它的长度，是旋转的角度，这种向量我们称为旋转向量（Axis-Angle）。  
+对于旋转轴，旋转前后是不变的。假设旋转向量为n，则![](https://www.zhihu.com/equation?tex=+Rn+%3D+n+),即n是旋转矩阵R特征值1对应的特征向量（不明白的去看特征值特征向量的定义）。  
+但旋转角比较难求。它是由罗德里格斯公式（Rodrigues’s Formula）求出的：  
+![](https://www.zhihu.com/equation?tex=+R+%3D+cos%5Ctheta+I+%2B+%281-cos%5Ctheta%29nn%5ET%2Bsin%5Ctheta+n%5E%5Cwedge+%5C%5C+tr%28R%29+%3D+cos%5Ctheta+tr%28I%29+%2B+%281-cos%5Ctheta%29tr%28nn%5ET%29%2Bsin%5Ctheta+tr%28n%5E%5Cwedge%29+%5C%5C+%3D+1%2B2cos%5Ctheta++%5C%5C+%5Ctheta++%3D+arccos%28%5Cfrac%7Btr%28R%29-1%7D%7B2%7D%29+)  
