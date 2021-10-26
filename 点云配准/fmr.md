@@ -1,9 +1,9 @@
 # Feature-metric Registration: A Fast Semi-supervised Approach for Robust Point Cloud Registration without Correspondences 论文解读  
 
-## 第三节 原理  
+## 一、原理  
 在本节中，首先描述了注册框架的问题形成和概述。其次，详细介绍了Encoder模块。第三，我们展示了如何学习一个特征并解决多任务流中的注册问题。第四，详细说明了损耗函数。  
 ### 1.问题公式化  
-给定两个点云，配准的目标是找到刚性变化参数g（旋转矩阵R∈SO(3)和平移向量t，SO(3)：特殊正交群，是行列式为1的正交矩阵。关于李群和李代数的知识可以参考[这里](https://zhuanlan.zhihu.com/p/358455662)）将点云Q与P最佳对齐如下图所示:![image](https://user-images.githubusercontent.com/74122331/138546569-89b72dfd-57b8-4bff-82d8-cd353db6a425.png)
+给定两个点云，配准的目标是找到刚性变化参数g（旋转矩阵R∈SO(3)和平移向量t，SO(3)：特殊正交群，是行列式为1的正交矩阵。关于李群和李代数的知识见下文。
 其中，![image](https://user-images.githubusercontent.com/74122331/138547372-fba3e0aa-1226-4309-a3c3-826354e1d24f.png)是P和Q的feature-metric误差。
 ![image](https://user-images.githubusercontent.com/74122331/138547398-da3233db-587f-45ef-84b7-58a8914f16f7.png)是点云P的特征。K为特征维数(实验中为1024)，F为Encoder模块学习的特征提取函数。
 为了求解上述方程(1)，我们提出了一个结合经典非线性算法和无监督学习技术优点的特征度量配准框架。框架可以以半监督或无监督的方式进行训练。图2显示了该算法的概述。首先，对两个输入点云提取两个旋转注意特征;然后将特征输入到多任务模块中。在第一个分支(Task1)中，设计了一个解码器以无监督的方式训练encoder模块。在第二个分支中，计算投影误差来表示两个输入特征之间的差异，并通过最小化特征差异来估计最佳变换。迭代运行变换估计，通过运行逆合成(IC)算法[2]来估计每一步的变换增量(△θ):
@@ -33,3 +33,9 @@
 #### 4.1 倒角损失(Chamfer loss)  
 编码器-解码器分支可以在无监督的方式下进行训练。参考[11]，使用倒角距离损耗:  
 ![image](https://user-images.githubusercontent.com/74122331/138548048-0ef87b90-83fb-4f79-ab3a-cb08cc6092ae.png)  
+
+
+## 二、李群和李代数简介  
+在原作者提供的代码中，用到了李群和李代数的相关知识。下面进行简要介绍。  
+[参考链接](https://zhuanlan.zhihu.com/p/358455662)）将点云Q与P最佳对齐如下图所示:![image](https://user-images.githubusercontent.com/74122331/138546569-89b72dfd-57b8-4bff-82d8-cd353db6a425.png)  
+设有两个坐标系，一个的正交基底是[e1, e2, e3],，还有一个的正交基底是[e1', e2', e3']。他们的原点是相同的，也就是只有旋转关系。同一个点在这两个坐标系中的坐标分别为[a1, a2, a3]和[a1', a2', a3']。
