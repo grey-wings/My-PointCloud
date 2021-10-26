@@ -60,3 +60,13 @@
 对于旋转轴，旋转前后是不变的。假设旋转向量为n，则![](https://www.zhihu.com/equation?tex=+Rn+%3D+n+),即n是旋转矩阵R特征值1对应的特征向量（不明白的去看特征值特征向量的定义）。  
 但旋转角比较难求。它是由罗德里格斯公式（Rodrigues’s Formula）求出的：  
 ![](https://www.zhihu.com/equation?tex=+R+%3D+cos%5Ctheta+I+%2B+%281-cos%5Ctheta%29nn%5ET%2Bsin%5Ctheta+n%5E%5Cwedge+%5C%5C+tr%28R%29+%3D+cos%5Ctheta+tr%28I%29+%2B+%281-cos%5Ctheta%29tr%28nn%5ET%29%2Bsin%5Ctheta+tr%28n%5E%5Cwedge%29+%5C%5C+%3D+1%2B2cos%5Ctheta++%5C%5C+%5Ctheta++%3D+arccos%28%5Cfrac%7Btr%28R%29-1%7D%7B2%7D%29+)  
+
+#### （2）最小二乘优化  
+对于以下问题：![](https://www.zhihu.com/equation?tex=+%5Cunderset%7Bx%7D%7Bmin%7D%5Cfrac%7B1%7D%7B2%7D%5Cleft+%5C%7C+f%28x%29+%5Cright+%5C%7C_%7B2%7D%5E%7B2%7D+)  
+寻找一个x使函数达到极值，在图箱变换中，就是找到一个姿态是它“合理”。至于什么是合理，后面再说。  
+对于一个复杂的函数，无法通过求导使导数等于0的方法来求解极值点，因此需要迭代：    
+先给定一个初始值![](https://www.zhihu.com/equation?tex=x_0)  
+寻找一个增量![](https://www.zhihu.com/equation?tex=%5CDelta+x)，使![](https://www.zhihu.com/equation?tex=%5Cleft+%5C%7C+f%28x_i%2B%5CDelta+x%29+%5Cright+%5C%7C_%7B2%7D%5E%7B2%7D%3C%5Cleft+%5C%7C+f%28x_i%29+%5Cright+%5C%7C_%7B2%7D%5E%7B2%7D)（其实就是寻找函数降低的方向）  
+若![](https://www.zhihu.com/equation?tex=%5CDelta+x)足够小，则停止迭代  
+否则令![](https://www.zhihu.com/equation?tex=x_%7Bi%2B1%7D+%3D+x_%7Bi%7D+%2B+%5CDelta+x)，继续迭代  
+在第二步需要对函数求导。其中要求出![](https://www.zhihu.com/equation?tex=x_i%2B%5CDelta+x)。而连续变换时，R更新的方式是不断左乘新的变换矩阵而不是加。并且，特殊正交群对加法是不封闭的，
