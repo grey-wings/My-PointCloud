@@ -36,7 +36,7 @@ ICP的各种变体可以理解为影响下面六个步骤中的一个或几个�
 
 # Open3D中的with scaling点云配准  
 使用的函数的定义如下：  
-```python
+```cpp
 Eigen::Matrix4d TransformationEstimationPointToPoint::ComputeTransformation(
         const geometry::PointCloud &source,
         const geometry::PointCloud &target,
