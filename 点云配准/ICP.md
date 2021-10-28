@@ -33,3 +33,21 @@ ICP的各种变体可以理解为影响下面六个步骤中的一个或几个�
 4.拒绝包含边缘顶点(edge vertice,自行翻译可能不准确)的点对，以及一部分(a percentage of)具有最大点对点距离的点对  
 5.Point-to-plane误差函数  
 6.经典的“选择-匹配-最小化”迭代  
+
+# Open3D中的with scaling点云配准  
+使用的函数的定义如下：  
+```python
+Eigen::Matrix4d TransformationEstimationPointToPoint::ComputeTransformation(
+        const geometry::PointCloud &source,
+        const geometry::PointCloud &target,
+        const CorrespondenceSet &corres) const {
+    if (corres.empty()) return Eigen::Matrix4d::Identity();
+    Eigen::MatrixXd source_mat(3, corres.size());
+    Eigen::MatrixXd target_mat(3, corres.size());
+    for (size_t i = 0; i < corres.size(); i++) {
+        source_mat.block<3, 1>(0, i) = source.points_[corres[i][0]];
+        target_mat.block<3, 1>(0, i) = target.points_[corres[i][1]];
+    }
+    return Eigen::umeyama(source_mat, target_mat, with_scaling_);
+}
+```
