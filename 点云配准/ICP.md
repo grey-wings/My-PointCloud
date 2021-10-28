@@ -51,3 +51,4 @@ Eigen::Matrix4d TransformationEstimationPointToPoint::ComputeTransformation(
     return Eigen::umeyama(source_mat, target_mat, with_scaling_);
 }
 ```
+Eigen是一个线性代数的C++库。  
