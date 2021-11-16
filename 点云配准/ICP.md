@@ -13,6 +13,8 @@ ICP基本原理：
 SVD的公式为：  
 ![](https://pic3.zhimg.com/80/v2-a71a3b4be58eaea23992595d495c55ce_720w.jpg)  
 其中，**U**是m×m酉矩阵，**V**是n×n酉矩阵。**Σ**是m×n对角矩阵，主对角线上的每个元素都称为奇异值。  
+下面是三个矩阵的直观表示：  
+![](https://pic4.zhimg.com/80/v2-5ee98f8f3426b845bc1c5038ecd29593_720w.jpg)  
 
 
 # Efficient Variants of the ICP Algorithm论文解读  
